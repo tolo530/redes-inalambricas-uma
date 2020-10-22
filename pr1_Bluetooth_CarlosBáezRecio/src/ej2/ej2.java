@@ -1,7 +1,7 @@
 /*
  * Student Carlos Báez Recio
  * Exercise 2 from Bluetooth
- * Course 2020/2021
+ * Year 2020/2021
  */
 package ej2;
 
