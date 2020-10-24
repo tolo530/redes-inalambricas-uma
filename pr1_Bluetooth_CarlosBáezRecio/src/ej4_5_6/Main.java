@@ -33,7 +33,7 @@ public class Main {
 		try {
 			LocalDevice ld = LocalDevice.getLocalDevice();
 			DiscoveryAgent da = ld.getDiscoveryAgent();
-			MyDiscoveryListerner dl = new MyDiscoveryListerner(syncItem);
+			MyDiscoveryListerner dl = new MyDiscoveryListerner(syncItem); //true dir, false name
 			UUID uuids[] = new UUID[1];
 			int attridset[] = new int[1];
 			
