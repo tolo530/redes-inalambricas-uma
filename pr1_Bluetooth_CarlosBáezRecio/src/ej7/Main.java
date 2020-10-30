@@ -52,12 +52,18 @@ public class Main {
 						da.searchServices(attridset, uuids, rd, dl);
 						synchro.wait();
 						
-						//Si encuentro el servicio, tenemos que iniciar el chat con el servidor.
+						/*Si encuentro el servicio, tenemos que iniciar el chat con el servidor.
+						 * Para ello voy a crear la clase "Client" ya que la clase Main empieza a
+						 * complicarse demasiado. De forma que el chat se haría como un módulo
+						 * independiente a la clase Main
+						 */
 						if(dl.getServiceFound()) {
-							
+							System.out.println("Trying to connect to: "+dl.getURL());
+							Client myClient = new Client(dl.getURL());
+							myClient.initChat();
 						}
 						else {
-							System.out.println("Error: the server does not offer the service you are looking for");
+							System.out.println("Creating client and launching chat with server...");
 						}
 					}
 					else {

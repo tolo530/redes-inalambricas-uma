@@ -51,10 +51,10 @@ public class MyDiscoveryListener implements DiscoveryListener {
 			dvFound = true;
 			try {
 				if (rm.getFriendlyName(true) != null) {
-					System.out.println(rm.getFriendlyName(true)+" ["+rm.getBluetoothAddress()+"] found");
+					System.out.println(rm.getFriendlyName(true)+" ["+rm.getBluetoothAddress()+"] found!");
 				}
 				else {
-					System.out.println("Unamed-device "+"["+rm.getBluetoothAddress()+"] found");
+					System.out.println("Unamed-device "+"["+rm.getBluetoothAddress()+"] found!");
 				}
 			}
 			catch (IOException e) {
@@ -98,7 +98,7 @@ public class MyDiscoveryListener implements DiscoveryListener {
 				found = true;
 				//Construir URL
 				url = recordList[i].getConnectionURL(0, false); //0-> NOAUTHENTICATE_NOENCRYPT
-				System.out.println("Service found");
+				System.out.println("Service found!");
 			}
 			
 			i++;
