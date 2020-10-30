@@ -33,7 +33,7 @@ public class Main {
 		try {
 			LocalDevice ld = LocalDevice.getLocalDevice();
 			DiscoveryAgent da = ld.getDiscoveryAgent();
-			MyDiscoveryListerner dl = new MyDiscoveryListerner(syncItem); //true dir, false name
+			MyDiscoveryListerner dl = new MyDiscoveryListerner(syncItem, "F0A35A3002E6", "Carlos’s iPhone", "GATT"); //true dir, false name
 			UUID uuids[] = new UUID[1];
 			int attridset[] = new int[1];
 			
