@@ -13,7 +13,7 @@ import javax.microedition.io.StreamConnectionNotifier;
 public class Client {
 	
 	private String url = null;
-	private static String text = "";
+	private static String text = ""; //mensajes recibidos
 	
 	public Client (String url) {
 		this.url = url;
@@ -21,15 +21,17 @@ public class Client {
 	
 	public void initChat () {
 		try {
+			//Abrimos la conexión
 			StreamConnection con = (StreamConnection) Connector.open(url);
 			
+			//Creación de los elementos para el envio y recepción de mensajes
 			OutputStream os = con.openOutputStream();
 			InputStream is = con.openInputStream();
 			BufferedReader br = new BufferedReader(new InputStreamReader(is));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os));
 		
 			Scanner sc = new Scanner(System.in);
-			String me = "";
+			String me = ""; //mensajes enviados
 			
 			System.out.println("Connected");
 			while (!text.equals("FIN.")) {
@@ -41,7 +43,7 @@ public class Client {
 				bw.flush();
 				
 				System.out.println("Waiting for server response...");
-				text = br.readLine();
+				text = br.readLine(); //hasta que no recibo respuesta, espero.
 				System.out.println("SERVER>> "+text);
 				
 				
